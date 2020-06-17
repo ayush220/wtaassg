@@ -1,0 +1,34 @@
+<!-- Toolbar -->
+<mat-toolbar color="black" class="header">
+  <div>Employee Appraisal System</div>
+  <span class="nav-tool-items">
+    <mat-icon (click)="sidenav.toggle()" class="hamburger">Menu</mat-icon>
+  </span>
+</mat-toolbar>
+<!-- <mat-nav-list>
+      <a mat-list-item routerLinkActive="active" routerLink="/add-employee">
+        Add Employees
+      </a>
+      <a mat-list-item routerLinkActive="active" routerLink="/employee-list">
+        View Employees
+      </a>
+    </mat-nav-list> -->
+<mat-sidenav-container >
+  <!-- Sidenav -->
+  <mat-sidenav #sidenav [mode]="isBiggerScreen() ? 'over' : 'side'" [(opened)]="opened" [fixedInViewport]="true"
+    [fixedTopGap] class="sidebar">
+    <mat-nav-list class ="sidebar">
+      <a mat-list-item routerLinkActive="active" routerLink="/add-employee">
+        <mat-icon></mat-icon> Add Employees
+      </a>
+      <a mat-list-item routerLinkActive="active" routerLink="/employee-list">
+        <mat-icon></mat-icon> View Employees
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <!-- Main content -->
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
